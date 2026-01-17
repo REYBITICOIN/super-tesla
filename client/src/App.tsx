@@ -20,6 +20,12 @@ import Flow from "./pages/Flow";
 import Instruct from "./pages/Instruct";
 import Expand from "./pages/Expand";
 import UpscaleVideo from "./pages/UpscaleVideo";
+import SocialExport from "./pages/SocialExport";
+import Scheduler from "./pages/Scheduler";
+import Analytics from "./pages/Analytics";
+import Referral from "./pages/Referral";
+import Templates from "./pages/Templates";
+import MediaTools from "./pages/MediaTools";
 
 function Router() {
   return (
@@ -40,6 +46,12 @@ function Router() {
       <Route path={"/instruct"} component={Instruct} />
       <Route path={"/expand"} component={Expand} />
       <Route path={"/upscale-video"} component={UpscaleVideo} />
+      <Route path={"/export"} component={SocialExport} />
+      <Route path={"/scheduler"} component={Scheduler} />
+      <Route path={"/analytics"} component={Analytics} />
+      <Route path={"/referral"} component={Referral} />
+      <Route path={"/templates"} component={Templates} />
+      <Route path={"/media-tools"} component={MediaTools} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
