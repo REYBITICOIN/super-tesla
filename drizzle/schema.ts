@@ -25,4 +25,58 @@ export const users = mysqlTable("users", {
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
-// TODO: Add your tables here
+/**
+ * Token balance for each user.
+ * Tracks current balance and total tokens allocated.
+ */
+export const tokenBalances = mysqlTable("tokenBalances", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().unique(),
+  balance: int("balance").default(1000).notNull(), // Starting balance
+  totalAllocated: int("totalAllocated").default(1000).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type TokenBalance = typeof tokenBalances.$inferSelect;
+export type InsertTokenBalance = typeof tokenBalances.$inferInsert;
+
+/**
+ * Audit trail for token transactions.
+ * Records every token consumption event.
+ */
+export const tokenTransactions = mysqlTable("tokenTransactions", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  amount: int("amount").notNull(), // Negative for deductions
+  type: mysqlEnum("type", ["image_generation", "video_generation", "upscale", "tts", "initial_allocation", "purchase"]).notNull(),
+  creationId: int("creationId"), // Reference to the creation that consumed tokens
+  description: text("description"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type TokenTransaction = typeof tokenTransactions.$inferSelect;
+export type InsertTokenTransaction = typeof tokenTransactions.$inferInsert;
+
+/**
+ * User creations (images, videos, etc).
+ * Stores metadata about generated content.
+ */
+export const creations = mysqlTable("creations", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  type: mysqlEnum("type", ["image", "video", "upscale", "tts", "flow"]).notNull(),
+  prompt: text("prompt").notNull(),
+  s3Key: varchar("s3Key", { length: 512 }).notNull(), // S3 file path
+  s3Url: varchar("s3Url", { length: 2048 }).notNull(), // Public S3 URL
+  mimeType: varchar("mimeType", { length: 64 }),
+  tokensUsed: int("tokensUsed").notNull(),
+  metadata: text("metadata"), // JSON string for additional data
+  status: mysqlEnum("status", ["pending", "completed", "failed"]).default("pending").notNull(),
+  errorMessage: text("errorMessage"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Creation = typeof creations.$inferSelect;
+export type InsertCreation = typeof creations.$inferInsert;

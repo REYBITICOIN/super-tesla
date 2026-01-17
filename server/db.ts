@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { eq, and } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, tokenBalances, tokenTransactions, creations, InsertCreation, InsertTokenTransaction } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +89,168 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+// Token Management
+export async function getTokenBalance(userId: number) {
+  const db = await getDb();
+  if (!db) return null;
+
+  const result = await db
+    .select()
+    .from(tokenBalances)
+    .where(eq(tokenBalances.userId, userId))
+    .limit(1);
+
+  return result.length > 0 ? result[0] : null;
+}
+
+export async function initializeTokenBalance(userId: number, initialTokens: number = 1000) {
+  const db = await getDb();
+  if (!db) return null;
+
+  try {
+    const result = await db
+      .insert(tokenBalances)
+      .values({
+        userId,
+        balance: initialTokens,
+        totalAllocated: initialTokens,
+      })
+      .onDuplicateKeyUpdate({
+        set: { balance: initialTokens, totalAllocated: initialTokens },
+      });
+
+    return result;
+  } catch (error) {
+    console.error("[Database] Failed to initialize token balance:", error);
+    throw error;
+  }
+}
+
+export async function deductTokens(
+  userId: number,
+  amount: number,
+  type: InsertTokenTransaction["type"],
+  creationId?: number,
+  description?: string
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  try {
+    // Get current balance
+    const currentBalance = await getTokenBalance(userId);
+    if (!currentBalance) throw new Error("Token balance not found");
+
+    const newBalance = Math.max(0, currentBalance.balance - amount);
+
+    // Update balance
+    await db
+      .update(tokenBalances)
+      .set({
+        balance: newBalance,
+      })
+      .where(eq(tokenBalances.userId, userId));
+
+    // Record transaction
+    const transaction = await db.insert(tokenTransactions).values({
+      userId,
+      amount: -amount,
+      type,
+      creationId,
+      description,
+    });
+
+    return transaction;
+  } catch (error) {
+    console.error("[Database] Failed to deduct tokens:", error);
+    throw error;
+  }
+}
+
+export async function getTokenTransactions(userId: number, limit: number = 50) {
+  const db = await getDb();
+  if (!db) return [];
+
+  const result = await db
+    .select()
+    .from(tokenTransactions)
+    .where(eq(tokenTransactions.userId, userId))
+    .orderBy(tokenTransactions.createdAt)
+    .limit(limit);
+
+  return result;
+}
+
+// Creation Management
+export async function createCreation(data: InsertCreation) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  try {
+    await db.insert(creations).values(data);
+    // Get the created record to return it
+    const created = await db
+      .select()
+      .from(creations)
+      .where(eq(creations.userId, data.userId))
+      .orderBy(creations.createdAt)
+      .limit(1);
+    
+    return created[0];
+  } catch (error) {
+    console.error("[Database] Failed to create creation:", error);
+    throw error;
+  }
+}
+
+export async function getUserCreations(userId: number, limit: number = 50) {
+  const db = await getDb();
+  if (!db) return [];
+
+  const result = await db
+    .select()
+    .from(creations)
+    .where(eq(creations.userId, userId))
+    .orderBy(creations.createdAt)
+    .limit(limit);
+
+  return result;
+}
+
+export async function getCreationsByType(userId: number, type: string, limit: number = 50) {
+  const db = await getDb();
+  if (!db) return [];
+
+  const result = await db
+    .select()
+    .from(creations)
+    .where(and(eq(creations.userId, userId), eq(creations.type, type as any)))
+    .orderBy(creations.createdAt)
+    .limit(limit);
+
+  return result;
+}
+
+export async function updateCreationStatus(
+  creationId: number,
+  status: "pending" | "completed" | "failed",
+  errorMessage?: string
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  try {
+    const updateData: any = { status };
+    if (errorMessage) updateData.errorMessage = errorMessage;
+
+    const result = await db
+      .update(creations)
+      .set(updateData)
+      .where(eq(creations.id, creationId));
+
+    return result;
+  } catch (error) {
+    console.error("[Database] Failed to update creation status:", error);
+    throw error;
+  }
+}
