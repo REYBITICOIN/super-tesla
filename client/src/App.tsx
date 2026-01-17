@@ -26,6 +26,7 @@ import Analytics from "./pages/Analytics";
 import Referral from "./pages/Referral";
 import Templates from "./pages/Templates";
 import MediaTools from "./pages/MediaTools";
+import ProductDemo from "./pages/ProductDemo";
 
 function Router() {
   return (
@@ -52,6 +53,7 @@ function Router() {
       <Route path={"/referral"} component={Referral} />
       <Route path={"/templates"} component={Templates} />
       <Route path={"/media-tools"} component={MediaTools} />
+      <Route path={"/product-demo"} component={ProductDemo} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
