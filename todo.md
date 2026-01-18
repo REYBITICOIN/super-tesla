@@ -168,3 +168,34 @@
 - [ ] Testar agendamento automático
 - [ ] Criar checkpoint final
 - [ ] Deploy em produção
+
+
+## 🎬 NOVA TAREFA: Implementar 3 Recursos Principais
+
+### Tarefa 1: Geração de Vídeos com TTS
+- [x] Integrar Text-to-Speech (TTS) para português BR
+- [x] Sincronizar imagens com áudio
+- [x] Adicionar transições entre imagens
+- [x] Exportar em múltiplos formatos (MP4, WebM)
+- [x] Suportar duração variável (15s, 30s, 60s)
+- [x] Testes vitest para geração de vídeos
+
+### Tarefa 2: Publicação Automática em Redes Sociais
+- [x] Integrar com Facebook Graph API
+- [x] Integrar com Instagram Graph API
+- [x] Integrar com TikTok API
+- [x] Criar função de publicação para cada plataforma
+- [x] Respeitar limites de rate limit das APIs
+- [x] Tratamento de erros e retry automático
+- [x] Armazenar histórico de publicações no banco de dados
+- [x] Testes vitest para publicação
+
+### Tarefa 3: Dashboard de Campanhas
+- [x] Página de listagem de campanhas
+- [x] Exibir dados do produto (nome, preço, imagem)
+- [x] Mostrar status de publicação por rede social
+- [x] Gráficos de engajamento (views, likes, shares)
+- [x] Filtros por plataforma e período
+- [x] Botão para republicar campanhas
+- [x] Editar e deletar campanhas
+- [x] Interface visual com Recharts para visualização de dados

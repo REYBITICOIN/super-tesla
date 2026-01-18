@@ -3,6 +3,7 @@ import { z } from "zod";
 import { scrapeProduct, ProductData } from "../_core/productScraper";
 import { generateCommercialConfigs, CommercialConfig } from "../_core/commercialGenerator";
 import { generateImage } from "../_core/imageGeneration";
+import { publishToMultiplePlatforms } from "../_core/socialPublisher";
 import { deductTokens, getTokenBalance } from "../db";
 
 export const commercialRouter = router({
@@ -264,6 +265,44 @@ export const commercialRouter = router({
         return {
           success: false,
           error: error instanceof Error ? error.message : "Erro ao gerar comerciais",
+        };
+      }
+    }),
+
+  publishCommercials: protectedProcedure
+    .input(
+      z.object({
+        imageUrl: z.string().url().optional(),
+        videoUrl: z.string().url().optional(),
+        caption: z.string(),
+        platforms: z.array(
+          z.enum(["facebook", "instagram", "tiktok", "youtube"])
+        ),
+        hashtags: z.array(z.string()).optional(),
+      })
+    )
+    .mutation(async ({ input }) => {
+      try {
+        const publishConfigs = input.platforms.map((platform) => ({
+          platform: platform as "facebook" | "instagram" | "tiktok" | "youtube",
+          imageUrl: input.imageUrl,
+          videoUrl: input.videoUrl,
+          caption: input.caption,
+          hashtags: input.hashtags,
+          accessToken: "temp_token",
+          platformUserId: "temp_user_id",
+        }));
+
+        const results = await publishToMultiplePlatforms(publishConfigs);
+
+        return {
+          success: true,
+          data: results,
+        };
+      } catch (error) {
+        return {
+          success: false,
+          error: error instanceof Error ? error.message : "Erro ao publicar comerciais",
         };
       }
     }),
