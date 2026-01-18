@@ -1,86 +1,100 @@
-# Trinity AI Clone - Projeto Melhorado para Redes Sociais Brasileiras
+# Trinity AI Clone - VERSÃO MELHORADA (Supera o Original)
 
-## Funcionalidades Concluídas
-- [x] Database schema (users, tokens, creations, transactions)
-- [x] 12 ferramentas de IA (Vision, Video, Upscale, TTS, etc.)
-- [x] Sistema de tokens completo
-- [x] Galeria de criações
-- [x] Perfil de usuário
+## ✅ Funcionalidades Base Concluídas
+- [x] Database schema completo
+- [x] 12 ferramentas de IA
+- [x] Sistema de tokens
+- [x] Tradução para português brasileiro
+- [x] Exportação para redes sociais
 - [x] 32 testes vitest passando
 
-## Fase 1: Tradução para Português Brasileiro
-- [x] Traduzir menu lateral (Chat, Flow, Vision, etc.)
-- [x] Traduzir descrições de ferramentas
-- [x] Traduzir mensagens de erro e sucesso
-- [x] Traduzir página de perfil e configurações
-- [x] Traduzir galeria e histórico de criações
-- [x] Criar arquivo de i18n (internacionalização)
+## 🚀 Fase 1: Integração de IAs Gratuitas (Melhor que Original)
+- [ ] Integrar Pollinations.ai em ImageGenerator
+- [ ] Integrar Replicate Flux em VisionPro
+- [ ] Integrar Hugging Face para upscale
+- [ ] Seletor de provedor com fallback automático
+- [ ] Cache de imagens geradas
+- [ ] Histórico de gerações por provedor
 
-## Fase 2: Exportação Otimizada para Redes Sociais
-- [x] Criar redimensionador automático para cada plataforma
-- [x] Suportar YouTube (1920x1080, 1280x720)
-- [x] Suportar TikTok (1080x1920, 9:16)
-- [x] Suportar Instagram (1080x1080, 1080x1350, 1080x1920)
-- [x] Suportar WhatsApp Status (1080x1920)
-- [x] Suportar Facebook (1200x628, 1080x1080)
-- [x] Suportar Reels (1080x1920)
-- [x] Adicionar botão "Exportar para Rede Social"
-- [x] Gerar múltiplos formatos automaticamente
+## 🎨 Fase 2: Design Premium (Supera Original)
+- [ ] Redesenhar com componentes premium
+- [ ] Adicionar animações Framer Motion
+- [ ] Tema escuro com gradientes neon
+- [ ] Componentes customizados (Cards, Buttons, Inputs)
+- [ ] Ícones profissionais em todas as páginas
+- [ ] Responsividade perfeita mobile-first
+- [ ] Micro-interações e feedback visual
 
-## Fase 3: Biblioteca de Templates
-- [x] Criar seção de Templates
-- [x] Adicionar intros pré-prontos
-- [x] Adicionar transições
-- [x] Adicionar efeitos visuais
-- [x] Adicionar filtros
-- [x] Permitir customização de cores e textos
-- [x] Salvar templates personalizados
+## 🎬 Fase 3: Editor de Vídeo Integrado (NÃO TEM NO ORIGINAL)
+- [ ] Timeline visual com Framer Motion
+- [ ] Múltiplas camadas de vídeo/áudio/texto
+- [ ] Efeitos de transição (fade, slide, zoom)
+- [ ] Filtros e ajustes de cor em tempo real
+- [ ] Corte, redimensionamento e rotação
+- [ ] Preview ao vivo
+- [ ] Exportar em múltiplos formatos
 
-## Fase 4: Agendamento de Postagens
-- [x] Criar página de Agendador
-- [x] Integrar calendário
-- [x] Permitir agendar para múltiplas redes
-- [x] Salvar rascunhos
-- [x] Notificar quando postagem for publicada
-- [x] Histórico de postagens agendadas
+## 💳 Fase 4: Sistema de Pagamento Stripe (Monetização)
+- [ ] Integrar Stripe no backend
+- [ ] Página de planos (Starter, Pro, Premium)
+- [ ] Checkout seguro e PCI compliant
+- [ ] Histórico de transações
+- [ ] Sistema de cupons e promoções
+- [ ] Renovação automática
+- [ ] Fatura em PDF
 
-## Fase 5: Análise de Performance
-- [x] Criar dashboard de estatísticas
-- [x] Exibir criações mais populares
-- [x] Mostrar tokens consumidos por tipo
-- [x] Gráficos de uso ao longo do tempo
-- [x] Comparar performance entre ferramentas
-- [x] Exportar relatório de uso
+## 📊 Fase 5: Dashboard Analytics Avançado (Melhor que Original)
+- [ ] Dashboard em tempo real
+- [ ] Gráficos de uso por ferramenta (Chart.js)
+- [ ] Análise de tokens consumidos
+- [ ] Criações mais populares
+- [ ] Exportar relatórios (PDF/CSV)
+- [ ] Previsões de uso futuro (ML)
+- [ ] Comparação período a período
 
-## Fase 6: Sistema de Referência
-- [x] Criar página de Referência
-- [x] Gerar link único de referência
-- [x] Rastrear amigos indicados
-- [x] Bonificar tokens por referência
-- [x] Mostrar histórico de referências
-- [x] Leaderboard de referências
+## 🎭 Fase 6: Biblioteca de Templates Profissionais
+- [ ] 50+ templates premium
+- [ ] Templates por rede social
+- [ ] Presets de cores e estilos
+- [ ] Intros, outros, transições
+- [ ] Sistema de busca e filtros
+- [ ] Salvar templates customizados
+- [ ] Compartilhar templates com comunidade
 
-## Fase 7: Banco de Música/Áudio e Removedor de Fundo
-- [x] Integrar banco de música livre
-- [x] Permitir upload de áudio customizado
-- [x] Adicionar removedor de fundo automático
-- [x] Suportar múltiplos formatos de áudio
-- [x] Sincronizar áudio com vídeo
-- [x] Ajustar volume e fade in/out
+## 📱 Fase 7: Exportação Avançada para Redes Sociais
+- [ ] YouTube (1920x1080, 1280x720, 4K)
+- [ ] TikTok (1080x1920, 9:16)
+- [ ] Instagram (1080x1080, 1080x1350, 1080x1920)
+- [ ] WhatsApp Status (1080x1920)
+- [ ] Facebook (1200x628, 1080x1080)
+- [ ] LinkedIn (1200x627)
+- [ ] Twitter/X (1024x512)
+- [ ] Marca d'água customizável
+- [ ] Metadados automáticos
 
-## Fase 8: Testes e Validação
-- [x] Testar tradução em todas as páginas
-- [x] Testar exportação para cada rede social
-- [x] Testar agendamento de postagens
-- [x] Testar análise de performance
-- [x] Testar sistema de referência
-- [x] Testar removedor de fundo
-- [x] Verificar responsividade em mobile
+## 👥 Fase 8: Colaboração e Compartilhamento (NÃO TEM NO ORIGINAL)
+- [ ] Projetos compartilhados
+- [ ] Permissões (view, edit, admin)
+- [ ] Comentários em tempo real
+- [ ] Histórico de versões
+- [ ] Recuperação de versões
+- [ ] Links de compartilhamento público
+- [ ] Notificações de colaboradores
 
-## Fase 9: Deploy e Publicação
-- [x] Criar checkpoint final
-- [x] Publicar em domínio gratuito
-- [x] Configurar analytics
-- [x] Testar em produção
-- [x] Documentar funcionalidades
-- [x] Preparar guia do usuário
+## ⚡ Fase 9: Performance e PWA
+- [ ] Otimizar bundle size
+- [ ] Lazy loading de imagens
+- [ ] Cache inteligente com Service Worker
+- [ ] Modo offline básico
+- [ ] Instalável como app nativo
+- [ ] Lighthouse score 90+
+- [ ] Core Web Vitals otimizados
+
+## ✅ Fase 10: Testes e Deploy Final
+- [ ] Testes unitários (Vitest)
+- [ ] Testes de integração
+- [ ] Testes de performance
+- [ ] Testes de acessibilidade (A11y)
+- [ ] Checkpoint final
+- [ ] Deploy em domínio gratuito
+- [ ] Documentação completa

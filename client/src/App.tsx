@@ -28,6 +28,7 @@ import Templates from "./pages/Templates";
 import MediaTools from "./pages/MediaTools";
 import ProductDemo from "./pages/ProductDemo";
 import AITest from "./pages/AITest";
+import ImageGeneratorPro from "./pages/ImageGeneratorPro";
 
 function Router() {
   return (
@@ -56,6 +57,7 @@ function Router() {
       <Route path={"/media-tools"} component={MediaTools} />
       <Route path={"/product-demo"} component={ProductDemo} />
       <Route path={"/ai-test"} component={AITest} />
+      <Route path={"/image-pro"} component={ImageGeneratorPro} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
