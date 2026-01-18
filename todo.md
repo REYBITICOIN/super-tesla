@@ -216,3 +216,15 @@
 - ☀️ **Branco**: Camisas brancas (cores claras)
 - ☁️ **Cinza**: Luvas cinzas (tons neutros)
 - ⚡ **Eletricidade**: Bobinas Tesla (azul/violeta intenso)
+
+
+## 🔄 NOVA TAREFA: Agente de Reinicialização de Publicação no Facebook
+
+### Implementação de Agente de Reinicialização
+- [x] Criar agente de reinicialização de publicação no Facebook
+- [x] Implementar lógica de retry automático (até 3 tentativas)
+- [x] Tratamento de erros e logging detalhado
+- [x] Suporte a múltiplas plataformas (Facebook, Instagram, TikTok, YouTube)
+- [x] Geração de narrativas com LLM para cada plataforma
+- [x] Testes vitest para o agente
+- [x] 86 testes vitest passando (incluindo 14 testes do agente)
