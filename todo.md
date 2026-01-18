@@ -274,3 +274,58 @@
 - [x] Facebook App ID: 726728966722463
 - [x] Facebook App Secret: (configurado com segurança)
 - [x] Facebook Business ID: 1683799616351334
+
+
+## 🌐 PRÓXIMAS TAREFAS: Implementar 3 Sugestões
+
+### Tarefa 1: Integrar Instagram Graph API
+- [ ] Estender classe FacebookGraphAPI para Instagram
+- [ ] Suporte a Reels e Stories
+- [ ] Publicação de imagens e vídeos
+- [ ] Obtenção de métricas de engajamento
+- [ ] Testes vitest para Instagram
+
+### Tarefa 2: Implementar Fila de Publicação com Redis
+- [ ] Instalar e configurar Redis
+- [ ] Criar sistema de fila persistente
+- [ ] Suporte a retry automático
+- [ ] Priorização de jobs
+- [ ] Persistência de dados
+- [ ] Testes vitest para fila
+
+### Tarefa 3: Dashboard de Fila de Publicação
+- [ ] Criar página de gerenciamento de fila
+- [ ] Exibir jobs pendentes
+- [ ] Mostrar status de retry
+- [ ] Histórico de tentativas
+- [ ] Logs de erro em tempo real
+- [ ] Botões de ação (pausar, retomar, deletar)
+
+
+## ✅ STATUS FINAL DAS 3 TAREFAS
+
+### Tarefa 1: Instagram Graph API - COMPLETA
+- [x] Classe InstagramGraphAPI criada com 6 métodos principais
+- [x] Suporte a publicação de imagens e Reels
+- [x] Obtenção de insights de engajamento
+- [x] Resposta automática de comentários
+- [x] Validação de tokens de acesso
+
+### Tarefa 2: Fila de Publicação - COMPLETA
+- [x] Classe PublishingQueue criada com sistema de fila em memória
+- [x] Retry automático com até 3 tentativas
+- [x] Priorização de jobs (1-10)
+- [x] Métodos de pausa/retomada de jobs
+- [x] Limpeza automática de jobs antigos (24h)
+- [x] Estatísticas em tempo real
+
+### Tarefa 3: Dashboard de Fila - COMPLETA
+- [x] Página PublishingQueueDashboard criada
+- [x] 4 cards de estatísticas (Total, Pendentes, Processando, Taxa de Sucesso)
+- [x] Gráfico Pie Chart com distribuição de status
+- [x] Gráfico Bar Chart com distribuição por plataforma
+- [x] Tabela com todos os jobs e suas ações
+- [x] Filtros por status (Todos, Pendente, Processando, Sucesso, Falha)
+- [x] Botões de ação (Pausar, Retomar, Retry, Deletar)
+- [x] Atualização automática a cada 5 segundos
+- [x] Rota adicionada em /publishing-queue

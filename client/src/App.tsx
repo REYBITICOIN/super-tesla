@@ -37,6 +37,7 @@ import SocialConnect from "./pages/SocialConnect";
 import CommercialAgent from '@/pages/CommercialAgent';
 import CommercialGenerator from '@/pages/CommercialGenerator';
 import CampaignDashboard from '@/pages/CampaignDashboard';
+import PublishingQueueDashboard from '@/pages/PublishingQueueDashboard';
 
 function Router() {
   return (
@@ -73,6 +74,7 @@ function Router() {
       <Route path={"/commercial-agent"} component={CommercialAgent} />
       <Route path={"/commercial-generator"} component={CommercialGenerator} />
       <Route path={"/campaigns"} component={CampaignDashboard} />
+      <Route path={"/publishing-queue"} component={PublishingQueueDashboard} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
