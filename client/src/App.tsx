@@ -32,7 +32,8 @@ import ImageGeneratorPro from "./pages/ImageGeneratorPro";
 import VideoEditor from "./pages/VideoEditor";
 import Pricing from "./pages/Pricing";
 import AnalyticsDashboard from "./pages/AnalyticsDashboard";
-import CommercialAgent from "./pages/CommercialAgent";
+import CommercialAgent from '@/pages/CommercialAgent';
+import CommercialGenerator from '@/pages/CommercialGenerator';
 
 function Router() {
   return (
@@ -66,6 +67,7 @@ function Router() {
       <Route path={"/pricing"} component={Pricing} />
       <Route path={"/analytics"} component={AnalyticsDashboard} />
       <Route path={"/commercial-agent"} component={CommercialAgent} />
+      <Route path={"/commercial-generator"} component={CommercialGenerator} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
