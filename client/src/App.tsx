@@ -29,6 +29,9 @@ import MediaTools from "./pages/MediaTools";
 import ProductDemo from "./pages/ProductDemo";
 import AITest from "./pages/AITest";
 import ImageGeneratorPro from "./pages/ImageGeneratorPro";
+import VideoEditor from "./pages/VideoEditor";
+import Pricing from "./pages/Pricing";
+import AnalyticsDashboard from "./pages/AnalyticsDashboard";
 
 function Router() {
   return (
@@ -58,6 +61,9 @@ function Router() {
       <Route path={"/product-demo"} component={ProductDemo} />
       <Route path={"/ai-test"} component={AITest} />
       <Route path={"/image-pro"} component={ImageGeneratorPro} />
+      <Route path={"/video-editor"} component={VideoEditor} />
+      <Route path={"/pricing"} component={Pricing} />
+      <Route path={"/analytics"} component={AnalyticsDashboard} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
