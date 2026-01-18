@@ -14,6 +14,7 @@ import {
   deductTokens,
 } from "./db";
 import { aiRouter } from "./routers/ai";
+import { commercialRouter } from "./routers/commercial";
 
 export const appRouter = router({
   system: systemRouter,
@@ -47,6 +48,8 @@ export const appRouter = router({
   }),
 
   ai: aiRouter,
+
+  commercial: commercialRouter,
 
   creations: router({
     list: protectedProcedure

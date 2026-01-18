@@ -103,33 +103,34 @@
 ## 🎬 NOVA FUNCIONALIDADE: Agente de Comerciais Automáticos (PRIORIDADE MÁXIMA)
 
 ### Fase 1: Scraper de Produtos
-- [ ] Criar função que extrai dados de qualquer URL de produto
-- [ ] Extrair imagens do produto
-- [ ] Extrair logo da loja
-- [ ] Extrair nome do produto
-- [ ] Extrair descrição
-- [ ] Extrair preço
-- [ ] Suportar múltiplos e-commerce (Shopify, WooCommerce, etc)
+- [x] Criar função que extrai dados de qualquer URL de produto
+- [x] Extrair imagens do produto
+- [x] Extrair logo da loja
+- [x] Extrair nome do produto
+- [x] Extrair descrição
+- [x] Extrair preço
+- [x] Suportar múltiplos e-commerce (Shopify, WooCommerce, etc)
 
-### Fase 2: Gerador de Roteiros
-- [ ] Criar templates de roteiro em português BR
-- [ ] Gerar variações automáticas de roteiros
-- [ ] Incluir nome da loja, produto, preço e CTA
-- [ ] Otimizar para cada plataforma (TikTok, YouTube, etc)
+### Fase 2: Gerador de Rotéiros
+- [x] Criar templates de rotéiro em português BR
+- [x] Gerar variações automáticas de rotéiros
+- [x] Incluir nome da loja, produto, preço e CTA
+- [x] Otimizar para cada plataforma (TikTok, YouTube, etc)
 
 ### Fase 3: Compilador de Vídeo
 - [ ] Sincronizar imagens com áudio (TTS)
 - [ ] Adicionar animações de transição
 - [ ] Adicionar texto com nome da loja e preço
 - [ ] Gerar vídeo final em múltiplos formatos
+- [ ] (Em desenvolvimento - usar gerador de imagens por enquanto)
 
 ### Fase 4: Seletor de Plataforma
-- [ ] YouTube (1920x1080, 16:9)
-- [ ] TikTok (1080x1920, 9:16)
-- [ ] Instagram Reels (1080x1920, 9:16)
-- [ ] WhatsApp Status (1080x1920, 9:16)
-- [ ] Facebook (1200x628, 1:1, 16:9)
-- [ ] Redimensionamento automático
+- [x] YouTube (1920x1080, 16:9)
+- [x] TikTok (1080x1920, 9:16)
+- [x] Instagram Reels (1080x1920, 9:16)
+- [x] WhatsApp Status (1080x1920, 9:16)
+- [x] Facebook (1200x628, 1:1, 16:9)
+- [x] Redimensionamento automático
 
 ### Fase 5: Integração de Redes Sociais
 - [x] OAuth com Facebook
