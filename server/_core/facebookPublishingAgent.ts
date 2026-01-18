@@ -2,6 +2,7 @@ import { getDb } from "../db";
 import { publishedPosts, socialMediaAccounts } from "../../drizzle/schema";
 import { eq, and } from "drizzle-orm";
 import { invokeLLM } from "./llm";
+import { facebookAPI } from "./facebookGraphAPI";
 
 export interface PublishingJob {
   id: string;
@@ -191,26 +192,40 @@ Plataforma: ${platform}`,
     narrative: string,
     content: PublishingJob["content"]
   ): Promise<void> {
-    // Simulação - Em produção, usar Facebook Graph API
     console.log(`[Facebook] Publicando: ${narrative.substring(0, 100)}...`);
 
-    // Validar token
     if (!accessToken || accessToken.length < 10) {
       throw new Error("Token de acesso inválido para Facebook");
     }
 
-    // Aqui você faria a chamada real para a API do Facebook
-    // const response = await fetch(`https://graph.facebook.com/v18.0/me/feed`, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Authorization': `Bearer ${accessToken}`,
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     message: narrative,
-    //     link: content.imageUrl,
-    //   }),
-    // });
+    try {
+      const isValid = await facebookAPI.validateAccessToken(accessToken);
+      if (!isValid) {
+        throw new Error("Token de acesso expirado ou inválido");
+      }
+
+      const pages = await facebookAPI.getUserPages(accessToken);
+      if (pages.length === 0) {
+        throw new Error("Nenhuma página encontrada");
+      }
+
+      const page = pages[0];
+      const result = await facebookAPI.publishFeedPost(
+        page.id,
+        page.access_token,
+        narrative,
+        content.imageUrl
+      );
+
+      if (!result.success) {
+        throw new Error(result.error?.message || "Erro ao publicar no Facebook");
+      }
+
+      console.log(`[Facebook] Post publicado com sucesso: ${result.id}`);
+    } catch (error) {
+      console.error("[Facebook] Erro ao publicar:", error);
+      throw error;
+    }
   }
 
   /**
