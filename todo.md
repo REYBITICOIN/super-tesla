@@ -132,11 +132,14 @@
 - [ ] Redimensionamento automático
 
 ### Fase 5: Integração de Redes Sociais
-- [ ] OAuth com Facebook
-- [ ] OAuth com Instagram
-- [ ] OAuth com YouTube
-- [ ] OAuth com TikTok
-- [ ] Login automático e armazenamento de tokens
+- [x] OAuth com Facebook
+- [x] OAuth com Instagram
+- [x] OAuth com TikTok
+- [x] Login automático e armazenamento de tokens
+- [x] Tabela de contas de redes sociais no banco de dados
+- [x] Endpoints de conexão/desconexão de redes sociais
+- [x] Página de gerenciamento de conexões sociais
+- [x] 8 testes vitest para validar integração
 
 ### Fase 6: Agendamento de Publicações
 - [ ] Escolher plataforma de destino
