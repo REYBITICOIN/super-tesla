@@ -407,3 +407,29 @@
 - ✅ Sistema de webhooks em tempo real
 - ✅ Gerador de narrativas por nicho
 - ✅ Projeto pronto para produção
+
+
+## 🎯 NOVA TAREFA: Análise de Sentimento em Comentários
+- [x] Criar classe de análise de sentimento com LLM
+- [x] Integrar com webhooks de engajamento
+- [x] Classificar sentimentos (positivo, neutro, negativo)
+- [x] Gerar respostas automáticas personalizadas
+- [x] Armazenar análise no banco de dados
+- [x] Testes vitest para análise de sentimento
+
+## 🧪 NOVA TAREFA: Teste A/B de Narrativas
+- [x] Criar tabela de testes A/B no banco de dados
+- [x] Sistema de divisão de tráfego (50/50)
+- [x] Rastreamento de métricas por variante
+- [x] Cálculo de taxa de vitória
+- [x] Recomendação automática de melhor narrativa
+- [x] Dashboard de resultados de testes
+- [x] Testes vitest para A/B testing
+
+## 📊 NOVA TAREFA: Dashboard de Análise Comparativa
+- [x] Página de comparação entre plataformas
+- [x] Gráficos de performance por plataforma
+- [x] Análise de melhor horário de publicação
+- [x] Recomendações de otimização
+- [x] Filtros por período e nicho
+- [x] Tabela de comparação detalhada
