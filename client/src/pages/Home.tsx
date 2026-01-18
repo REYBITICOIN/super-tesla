@@ -47,7 +47,7 @@ export default function Home() {
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer">
               <Sparkles className="w-6 h-6 text-blue-500" />
-              <span className="text-xl font-bold">Trinity AI</span>
+              <span className="text-xl font-bold">Super Tesla</span>
             </div>
           </Link>
           <div className="flex items-center gap-4">
@@ -185,7 +185,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-slate-700 bg-slate-900/50 py-8">
         <div className="max-w-7xl mx-auto px-4 md:px-8 text-center text-slate-400">
-          <p>&copy; 2024 Trinity AI. All rights reserved.</p>
+          <p>&copy; 2024 Super Tesla. All rights reserved.</p>
         </div>
       </footer>
     </div>

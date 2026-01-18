@@ -21,7 +21,7 @@ import { Link, useLocation } from "wouter";
 import { toast } from "sonner";
 
 const TOOLS = [
-  { id: "chat", label: "Trinity Chat", icon: MessageSquare, badge: "NEW", href: "/chat" },
+  { id: "chat", label: "Super Tesla Chat", icon: MessageSquare, badge: "NEW", href: "/chat" },
   { id: "flow", label: "Flow", icon: GitBranch, badge: "BETA", href: "/flow" },
   { id: "vision2", label: "Vision 2.0", icon: Image, badge: "NEW", href: "/create" },
   { id: "instruct", label: "Instruct", icon: Wand2, badge: "BETA", href: "/instruct" },
@@ -131,7 +131,7 @@ export default function Studio() {
           <Link href="/studio">
             <div className="flex items-center gap-2 cursor-pointer">
               <Sparkles className="w-5 h-5 text-purple-500" />
-              <span className="font-bold text-sm">TRINITY AI</span>
+              <span className="font-bold text-sm">SUPER TESLA</span>
             </div>
           </Link>
         </div>
@@ -198,7 +198,7 @@ export default function Studio() {
             <a href="#" className="hover:text-slate-300">FAQ</a>
             <a href="#" className="hover:text-slate-300">Contact</a>
           </div>
-          <div className="pt-2 text-slate-600">Powered by Trinity</div>
+          <div className="pt-2 text-slate-600">Powered by Super Tesla</div>
         </div>
       </div>
 
