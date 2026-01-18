@@ -98,3 +98,69 @@
 - [ ] Checkpoint final
 - [ ] Deploy em domínio gratuito
 - [ ] Documentação completa
+
+
+## 🎬 NOVA FUNCIONALIDADE: Agente de Comerciais Automáticos (PRIORIDADE MÁXIMA)
+
+### Fase 1: Scraper de Produtos
+- [ ] Criar função que extrai dados de qualquer URL de produto
+- [ ] Extrair imagens do produto
+- [ ] Extrair logo da loja
+- [ ] Extrair nome do produto
+- [ ] Extrair descrição
+- [ ] Extrair preço
+- [ ] Suportar múltiplos e-commerce (Shopify, WooCommerce, etc)
+
+### Fase 2: Gerador de Roteiros
+- [ ] Criar templates de roteiro em português BR
+- [ ] Gerar variações automáticas de roteiros
+- [ ] Incluir nome da loja, produto, preço e CTA
+- [ ] Otimizar para cada plataforma (TikTok, YouTube, etc)
+
+### Fase 3: Compilador de Vídeo
+- [ ] Sincronizar imagens com áudio (TTS)
+- [ ] Adicionar animações de transição
+- [ ] Adicionar texto com nome da loja e preço
+- [ ] Gerar vídeo final em múltiplos formatos
+
+### Fase 4: Seletor de Plataforma
+- [ ] YouTube (1920x1080, 16:9)
+- [ ] TikTok (1080x1920, 9:16)
+- [ ] Instagram Reels (1080x1920, 9:16)
+- [ ] WhatsApp Status (1080x1920, 9:16)
+- [ ] Facebook (1200x628, 1:1, 16:9)
+- [ ] Redimensionamento automático
+
+### Fase 5: Integração de Redes Sociais
+- [ ] OAuth com Facebook
+- [ ] OAuth com Instagram
+- [ ] OAuth com YouTube
+- [ ] OAuth com TikTok
+- [ ] Login automático e armazenamento de tokens
+
+### Fase 6: Agendamento de Publicações
+- [ ] Escolher plataforma de destino
+- [ ] Selecionar grupos específicos (Facebook, Instagram, etc)
+- [ ] Escolher horário de publicação
+- [ ] Agendar para melhor horário automático
+- [ ] Histórico de agendamentos
+
+### Fase 7: Publicação Automática
+- [ ] Publicar em múltiplas redes simultaneamente
+- [ ] Publicar em grupos específicos
+- [ ] Respeitar limites de API de cada plataforma
+- [ ] Tratamento de erros e retry automático
+
+### Fase 8: Dashboard de Campanhas
+- [ ] Listar todas as campanhas criadas
+- [ ] Mostrar status de publicação
+- [ ] Exibir performance (views, likes, shares)
+- [ ] Histórico de publicações
+- [ ] Editar e republicar campanhas
+
+### Fase 9: Testes e Deploy
+- [ ] Testar com múltiplos produtos
+- [ ] Testar publicação em todas as plataformas
+- [ ] Testar agendamento automático
+- [ ] Criar checkpoint final
+- [ ] Deploy em produção
