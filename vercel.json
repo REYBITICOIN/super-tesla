@@ -2,12 +2,10 @@
   "buildCommand": "pnpm build",
   "devCommand": "pnpm dev",
   "installCommand": "pnpm install",
-  "framework": "vite",
-  "outputDirectory": "dist",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
+  "framework": null,
+  "functions": {
+    "dist/index.js": {
+      "runtime": "nodejs20.x"
     }
-  ]
+  }
 }
