@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { getLoginUrl } from "@/const";
 import { Film, Image, Mic2, Sparkles, Zap } from "lucide-react";
 import { Link } from "wouter";
+import TeslaThemeSelector from "@/components/TeslaThemeSelector";
 
 const FEATURES = [
   {
@@ -51,6 +52,7 @@ export default function Home() {
             </div>
           </Link>
           <div className="flex items-center gap-4">
+            <TeslaThemeSelector />
             {isAuthenticated && !loading ? (
               <>
                 <Link href="/gallery">
